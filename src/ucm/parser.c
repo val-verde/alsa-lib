@@ -2343,8 +2343,10 @@ int uc_mgr_scan_master_configs(const char **_list[])
 
 		snprintf(fn, sizeof(fn), "%s.conf", d_name);
 		ucm_filename(filename, sizeof(filename), 2, d_name, fn);
+	#ifndef __ANDROID__
 		if (eaccess(filename, R_OK))
 			continue;
+	#endif
 
 		err = uc_mgr_config_load(2, filename, &cfg);
 		if (err < 0)
