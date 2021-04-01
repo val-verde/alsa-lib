@@ -2299,7 +2299,7 @@ int uc_mgr_scan_master_configs(const char **_list[])
 		snprintf(filename, sizeof(filename), "%s/ucm2",
 			 snd_config_topdir());
 
-#if defined(_GNU_SOURCE) && !defined(__NetBSD__) && !defined(__FreeBSD__) && !defined(__sun) && !defined(ANDROID)
+#if defined(_GNU_SOURCE) && !defined(__NetBSD__) && !defined(__FreeBSD__) && !defined(__sun) && !defined(__ANDROID__)
 #define SORTFUNC	versionsort
 #else
 #define SORTFUNC	alphasort
